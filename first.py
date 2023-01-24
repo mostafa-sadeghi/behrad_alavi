@@ -36,15 +36,29 @@ string = "abcedfghij"
 
 
 '''
+string = "abcedfghij"
+print(string[0], end=' ')
+print(string[1], end=' ')
+print(string[2], end=' ')
+print(string[3], end=' ')
+print(string[4], end=' ')
+print(string[5], end=' ')
+
 
 # exercise2:
 '''
 numbers = '1234567'
-
 هر یک از اعداد رشته بالا را جداگانه در یک خط نمایش بده
-
-
 '''
+numbers = '1234567'
+print(numbers[0], end='-')
+print(numbers[1], end='-')
+print(numbers[2], end='-')
+print(numbers[3], end='-')
+print(numbers[4], end='-')
+print(numbers[5], end='-')
+print(numbers[6])
+
 
 # قانون نامگذاری متغیرها
 # اسم متغیرها می تواند ترکیبی از حروف، اهداد و _ باشد
@@ -53,11 +67,11 @@ numbers = '1234567'
 # کاراکترهای خاص هم نمی توان گذاشت
 # @# -
 ########################
-description = "hello every body, here is out python class.\nwe are going to learn every thing about python"
-print(description)
-description = """hello every body, here is out python class.
-we are going to learn every thing about python"""
-print(description)
-description = '''hello every body, here is out python class.
-we are going to learn every thing about python'''
-print(description)
+# description = "hello every body, here is out python class.\nwe are going to learn every thing about python"
+# print(description)
+# description = """hello every body, here is out python class.
+# we are going to learn every thing about python"""
+# print(description)
+# description = '''hello every body, here is out python class.
+# we are going to learn every thing about python'''
+# print(description)
