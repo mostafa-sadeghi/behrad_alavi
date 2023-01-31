@@ -43,8 +43,6 @@ print(string[2], end=' ')
 print(string[3], end=' ')
 print(string[4], end=' ')
 print(string[5], end=' ')
-
-
 # exercise2:
 '''
 numbers = '1234567'
