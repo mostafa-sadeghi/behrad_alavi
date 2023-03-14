@@ -140,7 +140,7 @@ d. Nothing, the double quotes make for a syntax error.
 
 '''
 
-print("Save in c:\\new folder")
+# print("Save in c:\\new folder")
 '''
 
 print("Save in c:\new folder")

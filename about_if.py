@@ -45,13 +45,101 @@ teenager
 
 بالاتر از 18
 adult
-
-
 '''
+# name = input('enter a name:> ')
+# age = int(input('enter a age:> '))
 
+# if age < 8:
+#     print(f'{name}`s age is {age} and he/she is kid.')
+
+# if age >= 8 and age < 12:
+#     # if 8 <= age < 12:
+#     print(f'{name}`s age is {age} and he/she is junior.')
+
+# if age >= 12 and age < 18:
+#     print(f'{name}`s age is {age} and he/she is teenager.')
+# if age >= 18:
+#     print(f'{name}`s age is {age} and he/she is adult.')
 
 # برنامه ای بنویسید که 3 عدد را از ورودی دریافت نماید
 # و در صورتی که عدد وارد شده زوج بوده و نیز بین ده تا صد باشد پیغام زیر را پرینت نماید
 # even and ok
 # در صورتی که عدد وارد شده فرد باشد و نیز بین پنجاه تا هشتاد باشد پیغام زیر را پرینت نماید
 # odd and ok
+
+# number1 = float(input('enter first number:> '))
+# number2 = float(input('enter second number:> '))
+# number3 = float(input('enter third number:> '))
+
+# if number1 % 2 == 0 and (10 < number1 < 100):
+#     print(f'{number1} is even and between 10 and 100')
+
+# elif number1 % 2 != 0 and (50 < number1 < 80):
+#     print(f'{number1} is odd and between 10 and 80')
+
+
+# if number2 % 2 == 0 and (10 < number2 < 100):
+#     print(f'{number2} is even and between 10 and 100')
+
+# elif number2 % 2 != 0 and (50 < number2 < 80):
+#     print(f'{number2} is odd and between 10 and 80')
+
+# if number3 % 2 == 0 and (10 < number3 < 100):
+#     print(f'{number3} is even and between 10 and 100')
+
+# elif number3 % 2 != 0 and (50 < number3 < 80):
+#     print(f'{number3} is odd and between 10 and 80')
+
+
+# a = 1
+# b = 3
+
+# if a == b:
+#     print('a and b are equal!!!')
+
+# if a != b:
+#     print('a and b are not equal!!!')
+
+
+# name1 = 'behrad'
+# name2 = 'amihossein'
+
+# if name1 == name2:
+#     print('both names are the same')
+
+# name1 = 'amirhossein'
+# name2 = 'amirhossein'
+# if name1 == name2:
+#     print('both names are the same')
+
+# name1 = input('enter your name:> ')
+# name2 = input('enter your name:> ')
+
+# if name1 == name2:
+#     print('both names are the same')
+# else:
+#     print('both names are not the same')
+
+# USERPASS = 'admin'
+# PASS = 'root'
+
+# user_name = input('enter user name:> ')
+# password = input('enter password:> ')
+
+# if user_name == USERPASS and password == PASS:
+#     print("your user name and password is correct.")
+#     print("your account is valid")
+#     print('login was successful!!!')
+# else:
+#     print('you are`nt valid user')
+#     print('sorry, you can`t login')
+
+
+# bool datatype
+a = True
+if a:
+    print('a')
+
+b = False
+if b:
+    print('b')
