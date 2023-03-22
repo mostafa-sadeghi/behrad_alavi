@@ -75,7 +75,7 @@ adult
 #     print(f'{number1} is even and between 10 and 100')
 
 # elif number1 % 2 != 0 and (50 < number1 < 80):
-#     print(f'{number1} is odd and between 10 and 80')
+#     print(f'{number1} is odd and between 50 and 80')
 
 
 # if number2 % 2 == 0 and (10 < number2 < 100):
@@ -102,7 +102,7 @@ adult
 
 
 # name1 = 'behrad'
-# name2 = 'amihossein'
+# name2 = 'amirhossein'
 
 # if name1 == name2:
 #     print('both names are the same')
@@ -112,21 +112,21 @@ adult
 # if name1 == name2:
 #     print('both names are the same')
 
-# name1 = input('enter your name:> ')
-# name2 = input('enter your name:> ')
+name1 = input('enter your name:> ')
+name2 = input('enter your name:> ')
 
 # if name1 == name2:
 #     print('both names are the same')
 # else:
 #     print('both names are not the same')
 
-# USERPASS = 'admin'
+# USER = 'admin'
 # PASS = 'root'
 
 # user_name = input('enter user name:> ')
 # password = input('enter password:> ')
 
-# if user_name == USERPASS and password == PASS:
+# if user_name == USER and password == PASS:
 #     print("your user name and password is correct.")
 #     print("your account is valid")
 #     print('login was successful!!!')
@@ -136,10 +136,23 @@ adult
 
 
 # bool datatype
-a = True
-if a:
-    print('a')
+# a = True
+# if a:
+#     print('a')
 
-b = False
-if b:
-    print('b')
+# b = False
+# if b:
+#     print('b')
+
+
+# برنامه ای بنویسید که
+# ده عدد از ورودی دریافت نماید
+# و به لیستی اضافه کند
+# اکنون دو لیست جدید بساز و در یکی ، اعداد فرد موجود در لیست اصلی را ذخیره کن
+# و در لیست دوم، اعداد زوج موجود در لیست اصلی را ذخیره کن
+# اعضای لیست اصلی را پرینت کن
+# اعضای لیست دوم را پرینت کن
+# اعضای لیست سوم را پرینت کن
+# مجموع اعدا لیست اصلی را محاسبه و پرینت کن
+# مجموع اعداد لیست دوم را پرینت کن
+# مجموع اعداد لیست سوم را پرینت کن
