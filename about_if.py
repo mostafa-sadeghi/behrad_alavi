@@ -112,8 +112,8 @@ adult
 # if name1 == name2:
 #     print('both names are the same')
 
-name1 = input('enter your name:> ')
-name2 = input('enter your name:> ')
+# name1 = input('enter your name:> ')
+# name2 = input('enter your name:> ')
 
 # if name1 == name2:
 #     print('both names are the same')
@@ -156,3 +156,51 @@ name2 = input('enter your name:> ')
 # مجموع اعدا لیست اصلی را محاسبه و پرینت کن
 # مجموع اعداد لیست دوم را پرینت کن
 # مجموع اعداد لیست سوم را پرینت کن
+numbers = []
+n1 = float(input('enter a number: '))
+n2 = float(input('enter a number: '))
+n3 = float(input('enter a number: '))
+numbers.append(n1)
+numbers.append(n2)
+numbers.append(n3)
+print("all numbers in main list", numbers)
+even_numbers = []  # عدد های زوج
+odd_numbers = []  # عدد های فرد
+# اگر باقی مانده تقسیم یک عدد بر دو مساوی صفر باشد، آنگاه عدد زوج است
+# اگر باقی مانده تقسیم عددی بر دو صفر نلاید عدد فرد است
+if numbers[0] % 2 == 0:
+    even_numbers.append(numbers[0])
+else:
+    odd_numbers.append(numbers[0])
+if numbers[1] % 2 == 0:
+    even_numbers.append(numbers[1])
+else:
+    odd_numbers.append(numbers[1])
+if numbers[2] % 2 == 0:
+    even_numbers.append(numbers[2])
+else:
+    odd_numbers.append(numbers[2])
+print("even numbers : ", even_numbers)
+print("odd numbers : ", odd_numbers)
+
+# تمرین اول
+
+# مجموع اعداد لیست اصلی را محاسبه و پرینت کن
+# مجموع اعداد لیست دوم را پرینت کن
+# مجموع اعداد لیست سوم را پرینت کن
+
+
+# تمرین دوم
+
+# برنامه ای بنویسید که نام سه دوست را از ورودی بگیرد
+# و در یک لیت ذخیره نماید
+# سپس پیغامی مشابه زیر نمایش داده شود
+# ali and reza and sina are friends.
+
+# نام شخص دیگری را از ورودی بگیرید و به لیست بالا اضافه نمائید
+# نام شخصی را از ورودی بگیرد و از لیست با لا حذف نمائید.
+
+# یادآوری
+numbers = [1, 2, 3, 4, 5]
+
+numbers.remove(4)
