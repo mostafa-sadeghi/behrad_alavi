@@ -35,6 +35,16 @@
 برنامه ای بنویسید که تعداد اعداد زوج موجود در لیست زیر را نمایش دهد
 my_list = [4,3,67,89,44,23,456,2345,2000]
 '''
+# my_list = [4,3,67,89,44,23,456,2345,2000]
+# count = 0
+
+# for number in my_list:
+#     if number % 2 == 0:
+#         count += 1
+
+# print("number of even is :", count)
+
+
 # exercise 2:
 '''
 my_list = [4,3,67,89,44,23,456,2345,2000]
@@ -42,8 +52,20 @@ my_list = [4,3,67,89,44,23,456,2345,2000]
 در صورتی که عدد در لیست وجود داشته باشد، شماره خانه یا ایندکس آن عدد را نمایش دهد
 در غیر اینصورت "nothing" را نمایش دهد
 '''
+# my_list = [4,3,67,89,44,23,456,2345,2000]
 
-# count = 0
+# find = "no"
+# number = int(input('Enter a number: '))
+# for i in range(len(my_list)):
+#     if my_list[i] == number:
+#         print(i)
+#         find = "yes"
+# if find == "no":
+#     print("nothing")
+
+
+
+count = 0
 
 # for i in range(3):
 #     new_number = int(input('Enter a number: '))
@@ -52,14 +74,26 @@ my_list = [4,3,67,89,44,23,456,2345,2000]
 
 # print(f'number 1000 repeated {count} times.')
 
+# i = 0
+# while i < 3:
+#     new_number = int(input('Enter a number: '))
+#     if new_number == 1000:
+#         count += 1
+#     i += 1
+
+# print(f'number 1000 repeated {count} times.')
+
+
+
+
 
 # for i in range(3):
 #     print("hi")
 
-i = 0
-while i < 3:
-    print("hi")
-    i += 1
+# i = 0
+# while i < 3:
+#     print("hi")
+#     i += 1
 # exercise 3:
 '''
 برنامه بالا یعنی برنامه پیدا کردن تعداد تکرار عدد 1000 را با استفاده از حلقه وایل بنویسید
