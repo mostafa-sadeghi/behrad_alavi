@@ -1,108 +1,89 @@
-from turtle import Turtle, Screen
-import time
-from random import randint
+from turtle import Screen, Turtle
+from time import sleep
+from random import randrange
 
-
-def make_turtle_object(color, shape):
-    turtle_object = Turtle()
-    turtle_object.speed("fastest")
-    turtle_object.color(color)
-    turtle_object.shape(shape)
-    turtle_object.penup()
-    return turtle_object
-
-
-def change_food_position():
-    food_x_pos = randint(-250, 250)
-    food_y_pos = randint(-250, 250)
-    food.setpos(food_x_pos, food_y_pos)
-
-
-def go_up():
-    if head.dir != "down":
-        head.dir = "up"
-
-
-def go_down():
-    if head.dir != "up":
-        head.dir = "down"
-
-
-def go_left():
-    if head.dir != "right":
-        head.dir = "left"
-
-
-def go_right():
-    if head.dir != "left":
-        head.dir = "right"
-
+main_surface = Screen()
+main_surface.bgcolor('blue')
+main_surface.setup(width=600, height=600)
+main_surface.title('Snake Game')
+main_surface.tracer(0)
+# TODO  برای درست کردن صفحه نیز یک تابع ایجاد کنید
+def make_turtle(turtle_shape, turtle_color):
+    my_turtle = Turtle()
+    my_turtle.shape(turtle_shape)
+    my_turtle.color(turtle_color)
+    my_turtle.penup()
+    my_turtle.speed("fastest")
+    return my_turtle
 
 def move():
-    if head.dir == "up":
-        y = head.ycor()
-        head.sety(y + 20)
-    if head.dir == "down":
-        y = head.ycor()
-        head.sety(y - 20)
-    if head.dir == "left":
-        x = head.xcor()
-        head.setx(x - 20)
-    if head.dir == "right":
-        x = head.xcor()
-        head.setx(x + 20)
+    if snake_head.direction == "up":
+        yposition = snake_head.ycor()
+        yposition += 20  # yposition = yposition + 20
+        snake_head.sety(yposition)
+    if snake_head.direction == "down":
+        yposition = snake_head.ycor()
+        yposition -= 20  # yposition = yposition + 20
+        snake_head.sety(yposition)
+    if snake_head.direction == "right":
+        xposition = snake_head.xcor()
+        xposition += 20  # yposition = yposition + 20
+        snake_head.setx(xposition)
+    if snake_head.direction == "left":
+        xposition = snake_head.xcor()
+        xposition -= 20  # yposition = yposition + 20
+        snake_head.setx(xposition)
+def go_up():
+    if snake_head.direction != "down":
+        snake_head.direction = "up"
+def go_down():
+    if snake_head.direction != "up":
+        snake_head.direction = "down"
+def go_left():
+    if snake_head.direction != "right":
+        snake_head.direction = "left"
+def go_right():
+    if snake_head.direction != "left":
+        snake_head.direction = "right"
 
+def change_food_position():
+    x = randrange(-270, 270)
+    y = randrange(-270, 270)
+    food.goto(x,y)
 
-window = Screen()
-window.title("Snake game")
-window.bgcolor("blue")
-window.setup(width=600, height=600)
-window.tracer(0)
-head = make_turtle_object("black", "square")
-head.dir = "none"
+snake_head = make_turtle("square", "black")
+snake_head.goto(100, 100)
+snake_head.direction = "stop"
 
-
-food = make_turtle_object("red", "circle")
+food = make_turtle("circle", "red")
 change_food_position()
 
+main_surface.listen()
+main_surface.onkey(go_up,"Up")
+main_surface.onkey(go_down,"Down")
+main_surface.onkey(go_left,"Left")
+main_surface.onkey(go_right,"Right")
 
-window.listen()
-window.onkey(go_up, "Up")
-window.onkey(go_down, "Down")
-window.onkey(go_left, "Left")
-window.onkey(go_right, "Right")
 
 snake_body = []
-score = 0
+running = True
+while running:
+    main_surface.update()
 
-score_pen = make_turtle_object("grey", "square")
-score_pen.hideturtle()
-score_pen.setposition(0,260)
-score_pen.write(f'Score: {score}', align="center", font=("Arial", 24))
-while True:
-    window.update()
-    if head.distance(food) < 20:
+    if snake_head.distance(food) < 20:
         change_food_position()
-        tail = make_turtle_object("grey", "square")
-        snake_body.append(tail)
+        new_tail = make_turtle("square", "grey")
+        snake_body.append(new_tail)
 
     for i in range(len(snake_body) - 1, 0, -1):
-        x = snake_body[i-1].xcor()
-        y = snake_body[i-1].ycor()
+        prevx = snake_body[i-1].xcor()
+        prevy = snake_body[i-1].ycor()
+        snake_body[i].goto(prevx, prevy)
 
-        snake_body[i].goto(x, y)
-    if len(snake_body) > 0:
-        xhead = head.xcor()
-        yhead = head.ycor()
-        snake_body[0].goto(xhead, yhead)
+    if len(snake_body) >0 :
+        head_x = snake_head.xcor()
+        head_y = snake_head.ycor()
+        snake_body[0].goto(head_x, head_y)
 
-    if head.xcor() > 290: # todo اضافه کردن خروج از سایر جهت ها
-        head.goto(0,0)
-        head.dir = "none"
-        for body in snake_body:
-            body.hideturtle()
-        snake_body.clear()
-        # TODO قرار دادن کدهای ریست در یک تابع
-    # TODO اضافه کردن امتیاز
     move()
-    time.sleep(0.1)
+    sleep(0.2)
