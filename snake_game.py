@@ -2,12 +2,17 @@ from turtle import Screen, Turtle
 from time import sleep
 from random import randrange
 
+score = 0
+
+
 main_surface = Screen()
 main_surface.bgcolor('blue')
 main_surface.setup(width=600, height=600)
 main_surface.title('Snake Game')
 main_surface.tracer(0)
 # TODO  برای درست کردن صفحه نیز یک تابع ایجاد کنید
+
+
 def make_turtle(turtle_shape, turtle_color):
     my_turtle = Turtle()
     my_turtle.shape(turtle_shape)
@@ -15,6 +20,7 @@ def make_turtle(turtle_shape, turtle_color):
     my_turtle.penup()
     my_turtle.speed("fastest")
     return my_turtle
+
 
 def move():
     if snake_head.direction == "up":
@@ -33,23 +39,43 @@ def move():
         xposition = snake_head.xcor()
         xposition -= 20  # yposition = yposition + 20
         snake_head.setx(xposition)
+
+
 def go_up():
     if snake_head.direction != "down":
         snake_head.direction = "up"
+
+
 def go_down():
     if snake_head.direction != "up":
         snake_head.direction = "down"
+
+
 def go_left():
     if snake_head.direction != "right":
         snake_head.direction = "left"
+
+
 def go_right():
     if snake_head.direction != "left":
         snake_head.direction = "right"
 
+
 def change_food_position():
     x = randrange(-270, 270)
     y = randrange(-270, 270)
-    food.goto(x,y)
+    food.goto(x, y)
+
+
+def reset():
+    global score
+    score = 0
+    snake_head.goto(0, 0)
+    snake_head.direction = ""
+    for body in snake_body:
+        body.ht()
+    snake_body.clear()
+
 
 snake_head = make_turtle("square", "black")
 snake_head.goto(100, 100)
@@ -58,32 +84,46 @@ snake_head.direction = "stop"
 food = make_turtle("circle", "red")
 change_food_position()
 
+score_board = make_turtle("square", "white")
+score_board.goto(0, 260)
+score_board.hideturtle()
+
+
 main_surface.listen()
-main_surface.onkey(go_up,"Up")
-main_surface.onkey(go_down,"Down")
-main_surface.onkey(go_left,"Left")
-main_surface.onkey(go_right,"Right")
+main_surface.onkey(go_up, "Up")
+main_surface.onkey(go_down, "Down")
+main_surface.onkey(go_left, "Left")
+main_surface.onkey(go_right, "Right")
 
 
 snake_body = []
 running = True
 while running:
+    score_board.clear()
+    score_board.write(f"Score: {score}", font=("arial", 28), align="center")
     main_surface.update()
 
     if snake_head.distance(food) < 20:
         change_food_position()
         new_tail = make_turtle("square", "grey")
         snake_body.append(new_tail)
+        score += 1
 
     for i in range(len(snake_body) - 1, 0, -1):
         prevx = snake_body[i-1].xcor()
         prevy = snake_body[i-1].ycor()
         snake_body[i].goto(prevx, prevy)
 
-    if len(snake_body) >0 :
+    if len(snake_body) > 0:
         head_x = snake_head.xcor()
         head_y = snake_head.ycor()
         snake_body[0].goto(head_x, head_y)
+
+    if snake_head.xcor() > 290 or \
+        snake_head.xcor() < -290 or \
+            snake_head.ycor() > 290 or \
+                snake_head.ycor() < -290:
+        reset()
 
     move()
     sleep(0.2)
